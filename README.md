@@ -14,6 +14,20 @@
 
 Choose an option:
 <br>
+# OR
+========== STUDY TRACKER ==========
+
+1. Add a study session
+2. View all study sessions
+3. Update or delete a session
+4. View total study hours
+5. Compare study subjects
+6. Analyse productivity
+7. Generate charts
+8. Exit
+
+Select an option:
+<br>
 ## Project Structure
 
 ```text
