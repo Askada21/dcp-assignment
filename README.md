@@ -1,5 +1,5 @@
 # DCP assignment
-## Student Study Habits & Productivity Tracker
+<!-- ## Student Study Habits & Productivity Tracker
 (StudyTrack - Personal Study Habits Analysis Using Python & Pandas) <br>
 - The purpose of this assignment: How do my study habits, study time, breaks, and daily activities affect my productivity? <br>
 ===== STUDY TRACKER =====
@@ -57,3 +57,38 @@ Each row represents one study session. Multiple sessions can be recorded on the 
 
 For more information, see [Data Dictionary](data_dictionary.md).
 
+
+## Research Questions & Pandas Analysis
+
+The goal of this project is to analyse my personal study habits, track the time spent studying different subjects, and explore patterns in my productivity using Python and Pandas.
+
+The following research questions will guide the analysis:
+
+| Research Question | Pandas Technique |
+|---|---|
+| How many hours do I study on average per day? | `groupby()` + `sum()` + `mean()` |
+| Which subject do I spend the most time studying? | `groupby()` + `sum()` |
+| On which day of the week do I study the most? | `groupby()` + `sum()` |
+| Do I study more at home, in the library, or at university? | `groupby()` + `sum()` |
+| Which study location has the highest average productivity? | `groupby()` + `mean()` |
+| Is there a relationship between study hours and productivity? | `corr()` |
+| How many days did I study versus take a day off? | `groupby()` + `count()` |
+| How does my study time change throughout the semester? | `groupby()` + Data Visualisation |
+
+### Expected Outcomes
+
+By analysing my dataset, I aim to:
+
+- Identify which subjects require the most study time.
+- Understand my average daily study hours.
+- Compare productivity across different study locations.
+- Explore the relationship between study duration and productivity.
+- Identify patterns in my study routine throughout the semester.
+- Visualise study habits using charts and graphs.
+
+### Technologies
+
+- **Python** — Data processing and analysis
+- **Pandas** — Data manipulation and statistical analysis
+- **CSV** — Storage of manually collected data
+- **Matplotlib** — Data visualisation -->
