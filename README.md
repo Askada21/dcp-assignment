@@ -13,3 +13,33 @@
 7. Exit
 
 Choose an option:
+<br>
+## Project Structure
+
+```text
+dcp-assignment/
+├── main.py              # Python script for data analysis
+├── study_tracker.csv    # Dataset containing study sessions
+├── data_dictionary.md   # Dataset documentation
+└── README.md            # Project overview
+```
+
+## Dataset
+
+The dataset contains records of my study sessions, including time spent studying, subjects, productivity ratings, study locations, and completion status.
+
+Each row represents one study session. Multiple sessions can be recorded on the same date.
+
+## Data Dictionary
+
+| Column | Data Type | Description | Example |
+|---|---|---|---|
+| `date` | Date | Date of study session (DD-MM-YYYY) | 16-10-2026 |
+| `study_hours` | Float | Number of hours spent studying | 2.5 |
+| `subject` | String | Subject studied | Python |
+| `productivity` | Integer (1–5) | Self-rated productivity level | 5 |
+| `study_location` | Category | Location of the study session | Study Room |
+| `study_status` | Binary Category | Whether the session was completed (Yes/No) | Yes |
+
+For more information, see [Data Dictionary](data_dictionary.md).
+
