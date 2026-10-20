@@ -2,9 +2,11 @@
 
 ## Dataset Description
 
-This dataset records my daily study sessions, including subjects studied, study hours, productivity ratings, study locations, and completion status.
+This dataset records my daily study sessions, including subjects studied, study hours, productivity ratings, study locations, completion status, and sleep duration.
 
 Each row represents one study session. Multiple subjects can be recorded on the same date as separate entries.
+
+The dataset also aims to explore potential relationships between sleep duration, study hours, and productivity.
 
 ## Variables
 
@@ -47,11 +49,29 @@ Each row represents one study session. Multiple subjects can be recorded on the 
   - Yes – Completed
   - No – Not Completed
 
+### 7. sleep_hours
+- **Data Type:** Float / Numerical (Continuous)
+- **Description:** Number of hours slept during the night before the study session. This variable is used to investigate potential relationships between sleep duration, study hours, and productivity.
+- **Example:** 7.5
+- **Unit:** Hours
+- **Allowed Values:** 0–24
+
 ## Data Collection Notes
 
 - Dates are recorded in DD-MM-YYYY format.
-- Study hours can include decimal values (e.g., 1.5 hours).
+- Study hours and sleep hours can include decimal values (e.g., 1.5 study hours or 7.5 sleep hours).
 - Productivity is measured on a scale from 1 to 5.
 - Each row represents one study session for one subject.
 - Multiple study sessions can have the same date.
+- Sleep hours refer to the previous night's sleep.
+- If multiple study sessions occur on the same date, the same sleep duration is recorded for each session.
 - Column names and categorical values should remain consistent throughout the dataset.
+- All observations are collected and recorded manually.
+
+## Research Questions Related to Sleep
+
+- Is there a relationship between sleep duration and study productivity?
+- Do I study more hours after getting more sleep?
+- What is my average sleep duration?
+- Does my productivity differ depending on how many hours I sleep?
+- Is there a correlation between sleep duration and study hours?
