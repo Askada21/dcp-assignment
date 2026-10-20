@@ -42,7 +42,7 @@ dcp-assignment/
 
 The dataset contains records of my study sessions, including time spent studying, subjects, productivity ratings, study locations, and completion status.
 
-Each row represents one study session. Multiple sessions can be recorded on the same date.
+Each row represents one study session. Multiple sessions can be recorded on the same date. -->
 
 ## Data Dictionary
 
@@ -58,7 +58,7 @@ Each row represents one study session. Multiple sessions can be recorded on the 
 For more information, see [Data Dictionary](data_dictionary.md).
 
 
-## Research Questions & Pandas Analysis
+<!-- ## Research Questions & Pandas Analysis
 
 The goal of this project is to analyse my personal study habits, track the time spent studying different subjects, and explore patterns in my productivity using Python and Pandas.
 
@@ -75,6 +75,20 @@ The following research questions will guide the analysis:
 | How many days did I study versus take a day off? | `groupby()` + `count()` |
 | How does my study time change throughout the semester? | `groupby()` + Data Visualisation |
 
+
+### Sleep & Productivity Analysis
+
+The dataset also includes sleep duration to investigate potential relationships between sleeping habits and academic productivity.
+
+| Research Question | Pandas Technique |
+|---|---|
+| How many hours do I sleep on average? | `groupby()` + `mean()` |
+| Is there a correlation between sleep duration and productivity? | `corr()` |
+| Do I study longer after getting more sleep? | `corr()` |
+| What is my average productivity after sleeping less than 7 hours? | Filtering + `mean()` |
+| How does productivity vary across different sleep durations? | `groupby()` + `mean()` |
+
+The aim is to identify possible relationships between sleep duration, study time, and self-reported productivity.
 ### Expected Outcomes
 
 By analysing my dataset, I aim to:
