@@ -2,6 +2,58 @@
 <!-- ## Student Study Habits & Productivity Tracker
 (StudyTrack - Personal Study Habits Analysis Using Python & Pandas) <br>
 - The purpose of this assignment: How do my study habits, study time, breaks, and daily activities affect my productivity? <br>
+# Study Tracker – Data Centric Programming Assignment
+
+## Project Overview
+
+Study Tracker is a Python-based project developed as part of my Data Centric Programming module at Technological University Dublin (TU Dublin).
+
+The aim of this project is to collect, manage, and analyse my personal study habits using **Python and Pandas**.
+
+The dataset contains manually collected information about my daily study sessions, including:
+
+- **Date** – When the study session took place.
+- **Subject** – The subject studied (Python, SQL, Analytics, etc.).
+- **Study Hours** – Time spent studying, recorded in decimal hours.
+- **Productivity** – Self-rated productivity on a scale from 1 to 5.
+- **Study Location** – Where I studied (Home, Library, University, etc.).
+- **Study Status** – Whether the study session was completed (Yes/No).
+- **Sleep Hours** – Hours slept the previous night.
+
+Each row represents one study session, and multiple subjects can be recorded on the same date.
+
+## Project Objectives
+
+The main objectives are to:
+
+1. Create and maintain an original CSV dataset containing at least 50 observations.
+2. Use Pandas to load, clean, and explore the collected data.
+3. Analyse study habits, productivity, and sleep patterns.
+4. Identify relationships between study duration, sleep, and productivity.
+5. Visualise findings using charts and graphs.
+
+## Research Questions
+
+- How many hours do I study on average per day?
+- Which subjects do I spend the most time studying?
+- On which days of the week do I study the most?
+- Which study location is associated with the highest productivity?
+- Is there a correlation between sleep duration and productivity?
+- How many days do I study compared to days off?
+
+## Technologies
+
+- **Python** – Programming and data analysis
+- **Pandas** – Data manipulation and statistical analysis
+- **CSV** – Storage of manually collected observations
+- **Matplotlib** – Data visualisation
+
+## Current Progress
+
+The initial dataset structure and data dictionary have been defined. Daily observations are being collected in a CSV file, which is read using Pandas.
+
+Further analysis and visualisations will be developed as more data becomes available.
+
 ===== STUDY TRACKER =====
 
 1. Add study session
