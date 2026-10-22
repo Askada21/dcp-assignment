@@ -1,3 +1,11 @@
+#Before starting work
+# git pull --rebase origin main
+
+# After updating study_tracker.csv:
+# git add study_tracker.csv
+# git commit -m "Add day 7"
+# git push origin main
+
 import pandas as pd
 
 df = pd.read_csv("study_tracker.csv")
