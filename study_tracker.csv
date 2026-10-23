@@ -8,3 +8,4 @@ date,study_hours,subject,productivity(1-5),study_location,study_status,sleep_hou
 20-10-2026,1.17,Database,5,Home,No,5.33
 21-10-2026,0.1,DCP,5,Home,Yes,6.77
 21-10-2026,4.45,Database,5,Home,Yes,6.77
+22-10-2026,2.23,Database,5,University,Yes,7.77
