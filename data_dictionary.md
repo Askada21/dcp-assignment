@@ -2,9 +2,9 @@
 
 ## Dataset Description
 
-This dataset records my daily study sessions, including subjects studied, study hours, productivity ratings, study locations, completion status, and sleep duration.
+This dataset records my daily study sessions, including subjects studied, study hours, productivity ratings, study locations, study status, and sleep duration.
 
-Each row normally represents one study session. Multiple subjects can be recorded on the same date as separate entries.
+Each row represents either a study session or a day without studying. Multiple study sessions can be recorded on the same date as separate entries.
 
 Days without studying may be recorded as daily observations with zero study hours and missing session-related values.
 
@@ -77,12 +77,12 @@ All observations are collected and recorded manually.
 ### 6. study_status
 
 - **Data Type:** Categorical (Binary)
-- **Description:** Indicates whether the planned study session was completed.
+- **Description:** Indicates whether I studied on a particular day.
 - **Allowed Values:**
-  - Yes – Completed
-  - No – Not Completed
+  - Yes – I studied that day.
+  - No – I did not study that day.
 - **Unit:** Not applicable
-- **Measurement Method:** Recorded based on whether the planned study session was completed.
+- **Measurement Method:** Recorded manually based on whether any studying took place that day.
 
 A session marked `No` may still have recorded study hours if the planned session was not fully completed.
 
@@ -98,14 +98,13 @@ A session marked `No` may still have recorded study hours if the planned session
 ## Data Collection Notes
 
 - Dates are recorded in DD-MM-YYYY format.
-- Study hours and sleep hours can include decimal values (e.g., 1.5 study hours or 7.5 sleep hours).
-- Duration values are rounded to two decimal places.
+- Study hours and sleep hours are recorded in decimal hours and rounded to a maximum of two decimal places. Whole numbers are recorded without decimal places.
 - Productivity is measured on a scale from 1 to 5.
 - Each study-session row represents one subject.
 - Multiple study sessions can have the same date.
 - Sleep hours refer to the previous night's sleep.
 - If multiple study sessions occur on the same date, the same sleep duration is recorded for each session.
-- Study status indicates whether a planned session was completed.
+- Study status indicates whether I studied on that day.
 - Days without studying may be recorded with `study_hours = 0`, blank subject, productivity and location fields, and `study_status = No`.
 - Column names and categorical values should remain consistent throughout the dataset.
 - Missing observations are not invented or estimated later.

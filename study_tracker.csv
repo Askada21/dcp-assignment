@@ -1,13 +1,14 @@
 date,study_hours,subject,productivity(1-5),study_location,study_status,sleep_hours
 16-10-2026,2,Analytics for Decision Making,5,Study Room,Yes,8
-17-10-2026,3,Analytics for Decision Making,3,Home,No,9
+17-10-2026,3,Analytics for Decision Making,3,Home,Yes,9
 18-10-2026,2,Analytics for Decision Making,2,Home,Yes,5
-19-10-2026,1,Database,2,Home,No,7.5
-19-10-2026,2,DCP,5,Home,Yes,7.5
-20-10-2026,0.3,DCP,5,Home,Yes,5.33
-20-10-2026,1.17,Database,5,Home,No,5.33
-21-10-2026,0.1,DCP,5,Home,Yes,6.77
+19-10-2026,1,Database,2,Home,Yes,7.5
+19-10-2026,2,Data Centric Programming,5,Home,Yes,7.5
+20-10-2026,0.3,Data Centric Programming,5,Home,Yes,5.33
+20-10-2026,1.17,Database,5,Home,Yes,5.33
+21-10-2026,0.1,Data Centric Programming,5,Home,Yes,6.77
 21-10-2026,4.45,Database,5,Home,Yes,6.77
 22-10-2026,2.23,Database,5,University,Yes,7.77
-23-10-2026,0.83,Web Development,2,Home,No,8.5
-24-10-2026,0,,,,No,7.42
+23-10-2026,0.83,Web Development,2,Home,Yes,8.5
+24-10-2026,0,,,,No,7.70
+25-10-2026,1.82,Human Centered Design,4,Home,Yes,
