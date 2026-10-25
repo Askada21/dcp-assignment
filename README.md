@@ -1,4 +1,124 @@
 # DCP assignment
+# DCP Assignment – Personal Study Tracker
+
+## Project Proposal
+
+### Project Overview
+
+The Personal Study Tracker is a Data Centric Programming project that focuses on collecting and analysing my daily study habits.
+
+The aim of this project is to understand how much time I spend studying, which subjects I study most frequently, and whether factors such as sleep duration and study location are related to my productivity.
+
+I am collecting my own data manually by recording study sessions, subjects, productivity ratings, study locations, session completion status, and sleep duration.
+
+The collected data will be used to develop a Python application that stores information in a database, analyses it using Pandas, and presents results through visualisations and an interactive interface.
+
+## Project Objectives
+
+- Collect original data about my daily study habits.
+- Record the duration of study sessions and the subjects studied.
+- Track productivity levels and study locations.
+- Record sleep duration to investigate potential relationships with productivity.
+- Analyse patterns in study habits using Python and Pandas.
+- Store the collected data in an SQLite database.
+- Create visualisations using Matplotlib.
+- Develop an interactive application for exploring the dataset.
+
+## Research Questions
+
+The main research questions are:
+
+1. Is there a relationship between sleep duration and study productivity?
+2. Which subjects do I spend the most time studying?
+3. Does study location relate to my productivity?
+
+### Additional Questions
+
+- What is my average sleep duration?
+- Do I study more hours after getting more sleep?
+- How does my study duration vary across different days of the week?
+
+## Dataset Description
+
+The dataset records my daily study sessions, including subjects studied, study hours, productivity ratings, study locations, completion status, and sleep duration.
+
+Each row normally represents one study session for one subject. Multiple subjects can be recorded on the same date as separate entries.
+
+Days without studying may also be recorded with zero study hours and empty session-related fields.
+
+The dataset is stored in `study_tracker.csv`.
+
+All observations are collected and recorded manually.
+
+## Data Dictionary
+
+| Column | Data Type | Unit / Values | Description | Example |
+|---|---|---|---|---|
+| `date` | Date | DD-MM-YYYY | Date of the study session or daily observation | 16-10-2026 |
+| `study_hours` | Float | Hours | Number of hours spent studying | 2.5 |
+| `subject` | String / Categorical | Subject studied | Name of the subject | Python |
+| `productivity` | Integer / Ordinal | 1–5 | Self-rated productivity level | 5 |
+| `study_location` | Categorical | Home, Library, University, Study Room, Cafe | Location of the study session | Study Room |
+| `study_status` | Binary Categorical | Yes / No | Whether the planned study session was completed | Yes |
+| `sleep_hours` | Float | Hours | Number of hours slept the previous night | 7.5 |
+
+For detailed variable definitions, measurement methods, and data collection rules, see the [Data Dictionary](data_dictionary.md).
+
+## Data Collection Method
+
+The dataset is created from my own daily observations.
+
+- Dates are recorded in DD-MM-YYYY format.
+- Study duration is recorded in decimal hours.
+- Productivity is self-rated on a scale from 1 to 5.
+- Study location is recorded for each session.
+- Study status indicates whether the planned session was completed.
+- Sleep duration refers to the previous night's sleep.
+- Multiple study sessions can be recorded on the same date.
+- All values are recorded manually rather than generated or downloaded.
+
+## Technologies
+
+The project will use:
+
+- **Python** – Programming and data processing.
+- **CSV** – Initial data storage.
+- **SQLite** – Database storage.
+- **Pandas** – Data analysis.
+- **Matplotlib** – Data visualisation.
+- **Git and GitHub** – Version control and project documentation.
+
+## Planned Application Features
+
+The final application is planned to include:
+
+1. Viewing recorded study sessions.
+2. Searching and filtering study data.
+3. Calculating total and average study hours.
+4. Comparing study time across subjects.
+5. Analysing productivity and sleep duration.
+6. Displaying charts and visualisations.
+7. An interactive menu for exploring the dataset.
+8. The ability to add new study sessions.
+
+## Current Progress
+
+The project is currently in the data collection and planning stage.
+
+- The GitHub repository has been created.
+- The dataset structure has been defined.
+- Initial study observations have been recorded in a CSV file.
+- The data dictionary has been prepared.
+- Research questions have been identified.
+- Initial Python work has focused on reading the CSV dataset.
+
+The next steps are to continue collecting data, implement SQLite database storage, and develop the analysis and interactive application.
+
+## Data Collection and Academic Integrity
+
+All dataset observations are collected manually from my own study activities.
+
+The dataset does not use downloaded, scraped, synthetic, or AI-generated observations.
 <!-- ## Student Study Habits & Productivity Tracker
 (StudyTrack - Personal Study Habits Analysis Using Python & Pandas) <br>
 - The purpose of this assignment: How do my study habits, study time, breaks, and daily activities affect my productivity? <br>
@@ -95,20 +215,6 @@ dcp-assignment/
 The dataset contains records of my study sessions, including time spent studying, subjects, productivity ratings, study locations, and completion status.
 
 Each row represents one study session. Multiple sessions can be recorded on the same date. -->
-
-## Data Dictionary
-
-| Column | Data Type | Description | Example |
-|---|---|---|---|
-| `date` | Date | Date of study session (DD-MM-YYYY) | 16-10-2026 |
-| `study_hours` | Float | Number of hours spent studying | 2.5 |
-| `subject` | String | Subject studied | Python |
-| `productivity` | Integer (1–5) | Self-rated productivity level | 5 |
-| `study_location` | Category | Location of the study session | Study Room |
-| `study_status` | Binary Category | Whether the session was completed (Yes/No) | Yes |
-
-For more information, see [Data Dictionary](data_dictionary.md).
-
 
 <!-- ## Research Questions & Pandas Analysis
 
