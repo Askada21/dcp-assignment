@@ -1,4 +1,4 @@
-# Study Tracker – Data Dictionary
+# Data Dictionary
 
 ## Dataset Description
 
