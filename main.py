@@ -39,7 +39,7 @@ total_days = df["date"].nunique()
 print(f"Total days recorded: {total_days}")
 
 # print(df)
-#print(df.to_string(index=False))
+print(df.to_string(index=False))
 # '.to_string()' - method displays all rows and columns without shortening them with ....
 # 'index=False' - removes the automatically generated row numbers (0, 1, 2, etc.) from the display.
 # # Display the Data Dictionary
