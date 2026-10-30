@@ -2,7 +2,7 @@
 
 **Project:** Personal Study Tracker
 
-- [Assignment Brief](dataset_assignment.md)
+- [Assignment Brief](https://github.com/skooter500/dcp26-assignment/blob/main/dataset_assignment.md)
 
 This project is part of the Data Centric Programming module and focuses on tracking and analysing my personal study habits. It involves manually collecting data about my study sessions, including study hours, subjects, productivity ratings, study locations, study status, and sleep duration. The collected data will be stored and validated using Python and SQLite, analysed using Pandas, and visualised using Matplotlib. An interactive application will also be developed to explore the results.
 
