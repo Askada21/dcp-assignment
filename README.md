@@ -4,6 +4,10 @@
 
 - [Assignment Brief](dataset_assignment.md)
 
+This project is part of the Data Centric Programming module and focuses on tracking and analysing my personal study habits. It involves manually collecting data about my study sessions, including study hours, subjects, productivity ratings, study locations, study status, and sleep duration. The collected data will be stored and validated using Python and SQLite, analysed using Pandas, and visualised using Matplotlib. An interactive application will also be developed to explore the results.
+
+All data is collected through my own daily observations. No downloaded, scraped, AI-generated, or retrospectively estimated data will be used.
+
 # Questions
 
 The main goal of this project is to investigate my personal study habits using data collected manually throughout the semester.
@@ -71,7 +75,7 @@ The final application is planned to use:
 - **Matplotlib** for data visualisation.
 - **Git and GitHub** for version control and documentation.
 
-The application will allow users to explore the collected data, perform calculations, compare study habits, and display visualisations.
+<!--The application will allow users to explore the collected data, perform calculations, compare study habits, and display visualisations. -->
 
 The project is currently in the data collection and planning stage.
 
@@ -81,12 +85,27 @@ The project is currently under development.
 
 The collected data is stored in `study_tracker.csv`.
 
-To view the initial dataset using Python:
+**Requirements:**
+- Python 3
+- Pandas
+- VS Code or another Python development environment
+
+**To view the initial dataset:**
 
 1. Clone or download the GitHub repository.
 2. Open the project folder in VS Code or another Python development environment.
-3. Install Pandas if it is not already installed.
-4. Run `main.py` to view the dataset, provided the initial CSV-reading script is present.
+3. Make sure Python 3 is installed.
+4. Install Pandas if it is not already installed:
+
+   ```bash
+   python3 -m pip install pandas
+   ```
+
+5. Run `main.py` using Python 3:
+
+   ```bash
+   python3 main.py
+   ```
 
 The full application instructions will be added as the project develops.
 
@@ -116,7 +135,7 @@ Findings will be added after enough observations have been collected and analyse
 
 The analysis will focus on the research questions, including the relationship between sleep and productivity, time spent studying different subjects, and productivity across study locations.
 
-# List of files in the project
+<!-- # List of files in the project
 
 | Files | Source |
 |---|---|
@@ -124,27 +143,47 @@ The analysis will focus on the research questions, including the relationship be
 | `data_dictionary.md` | Data dictionary based on my own collection rules, prepared with AI writing assistance |
 | `study_tracker.csv` | Self-collected and manually recorded data |
 | `main.py` | Initial Python script; source and any external assistance to be documented |
-| `dataset_assignment.md` | Assignment brief provided by the lecturer, if included in the repository |
+| `dataset_assignment.md` | Assignment brief provided by the lecturer, if included in the repository | -->
 
 # References
 
 - Data Centric Programming Assignment 2026 – assignment brief and README template provided by the lecturer.
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
 - [Python Documentation](https://docs.python.org/3/)
-- [SQLite Documentation](https://www.sqlite.org/docs.html)
+<!--- [SQLite Documentation](https://www.sqlite.org/docs.html) -->
 
-# What I am most proud of in the assignment
+<!-- # What I am most proud of in the assignment
 
 At this stage, I am focusing on developing an original dataset based on my own daily study activities.
 
 The project allows me to investigate questions that are personally relevant to my study habits.
 
-This section will be updated as the application develops and the analysis is completed.
+This section will be updated as the application develops and the analysis is completed. -->
 
-# What I learned
+<!-- # What I learned
 
 So far, this project has involved planning a dataset, defining different data types, organising information in CSV format, and documenting how observations are collected.
 
 I am also developing my understanding of how Pandas can be used to work with structured data.
 
-This section will be expanded as I implement database storage, data analysis, visualisations, and interactive features.
+This section will be expanded as I implement database storage, data analysis, visualisations, and interactive features. -->
+
+
+<!-- ========== STUDY TRACKER ==========
+
+1. View all study sessions
+2. Search by subject
+3. Calculate total study hours
+4. Calculate average productivity
+5. Analyse sleep and productivity
+6. Display charts
+7. Add a study session
+0. Exit
+
+Select an option: 
+
+
+for question's diagrams:
+1. Scatter plot - sleep_hours against productivity
+2. Bar chart - total_hours per subjects 
+3. Bar chart - average of productivity by study location-->
