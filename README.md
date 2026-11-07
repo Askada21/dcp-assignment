@@ -87,7 +87,7 @@ The project is currently in the data collection and planning stage.
 
 The project is currently under development.
 
-The collected data is stored in `study_tracker.csv`.
+The collected data is stored in `data/study_tracker.csv`.
 
 **Requirements:**
 - Python 3
@@ -115,7 +115,7 @@ The full application instructions will be added as the project develops.
 
 # How it works:
 
-Currently, study observations are recorded manually in `study_tracker.csv`.
+Currently, study observations are recorded manually in `data/study_tracker.csv`.
 
 Each record contains information about the date, study duration, subject, productivity, location, study status, and sleep duration.
 
@@ -145,7 +145,7 @@ The analysis will focus on the research questions, including the relationship be
 |---|---|
 | `README.md` | Project documentation and proposal, prepared with AI writing assistance |
 | `data_dictionary.md` | Data dictionary based on my own collection rules, prepared with AI writing assistance |
-| `study_tracker.csv` | Self-collected and manually recorded data |
+| `data/study_tracker.csv` | Self-collected and manually recorded data |
 | `main.py` | Initial Python script; source and any external assistance to be documented |
 | `dataset_assignment.md` | Assignment brief provided by the lecturer, if included in the repository | -->
 
