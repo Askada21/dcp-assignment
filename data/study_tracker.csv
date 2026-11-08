@@ -28,5 +28,6 @@ date,study_hours,subject,productivity(1-5),study_location,study_status,sleep_hou
 05-11-2026,1.00,Database,3,Library,Yes,6.67
 05-11-2026,0.72,Human Centered Design,4,Home,Yes,6.67
 06-11-2026,1.07,Human Centered Design,5,Home,Yes,10.40
-07-11-2026,1.25,Human Centered Design,5,Home,Yes,
-07-11-2026,1.82,Database,4,Home,Yes,
+07-11-2026,1.25,Human Centered Design,5,Home,Yes,9.47
+07-11-2026,1.82,Database,4,Home,Yes,9.47
+07-11-2026,0.45,Data Centric Programming,2,Home,Yes,9.47
