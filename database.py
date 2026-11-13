@@ -14,3 +14,13 @@ study_location TEXT,
 study_status TEXT,
 sleep_hours REAL)
 """)
+
+# open CSV file
+with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        print(row)
+
+connection.commit()
+connection.close()
