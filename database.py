@@ -44,8 +44,18 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
             row["sleep_hours"] = float(row["sleep_hours"])
 
         # Data Validation
-        
+        if row["study_hours"] is None or not 0 <= row["study_hours"] <= 24:
+            print("Invalid study hours: ", row["study_hours"], "on", row["date"])
+            continue
 
+        if row["productivity(1-5)"] is not None and not 1 <= row["productivity(1-5)"] <= 5:
+            print("Invalid productivity: ", row["productivity(1-5)"], "on", row["date"])
+            continue
+
+        if row["sleep_hours"] is not None and not 0 <= row["sleep_hours"] <= 24:
+            print("Invalid sleep hours: ", row["sleep_hours"], "on", row["date"])
+            continue
+        
         cursor.execute(""" 
             insert into study_tracker (
                 date,
