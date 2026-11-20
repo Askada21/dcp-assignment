@@ -32,6 +32,20 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
             if row[column] == "":  # looks for a key, whose name is stored in the 'column' variable
                 row[column] = None
 
+        # Convert Values to Correct Data Types
+        # as csv.DictReader() reads CSV values as strings
+        if row["study_hours"] is not None:
+            row["study_hours"] = float(row["study_hours"])
+
+        if row["productivity(1-5)"] is not None:
+            row["productivity(1-5)"] = int(row["productivity(1-5)"])
+
+        if row["sleep_hours"] is not None:
+            row["sleep_hours"] = float(row["sleep_hours"])
+
+        # Data Validation
+        
+
         cursor.execute(""" 
             insert into study_tracker (
                 date,
