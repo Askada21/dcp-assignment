@@ -25,6 +25,13 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
 
     # insert data into SQLite
     for row in reader:
+
+        # Missing Values
+        # convert empty values to None/NULL
+        for column in row:
+            if row[column] == "":  # looks for a key, whose name is stored in the 'column' variable
+                row[column] = None
+
         cursor.execute(""" 
             insert into study_tracker (
                 date,
