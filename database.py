@@ -16,7 +16,7 @@ sleep_hours REAL)
 """)
 
 # prevent duplicate imports
-cursor.execute("delete from study_tracker")
+cursor.execute("DELETE from study_tracker")
 
 # open csv file
 with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
@@ -35,7 +35,7 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
                 study_status,
                 sleep_hours
             )
-            values (?, ?, ?, ?, ?, ?, ?)
+            values (?, ?, ?, ?, ?, ?, ?) -- -> placeholders
         """, (
             row["date"],
             row["study_hours"],
@@ -48,6 +48,21 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
     )
 
 connection.commit()
+
+# check inserted records
+cursor.execute("select * from study_tracker")
+
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+
+# count the records
+cursor.execute("select count(*) from study_tracker")
+
+total_rows = cursor.fetchone()[0]
+print("Total records: ", total_rows)
+
 connection.close()
 
 print("Data inserted successfully!")
