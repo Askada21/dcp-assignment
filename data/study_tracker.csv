@@ -50,3 +50,5 @@ date,study_hours,subject,productivity(1-5),study_location,study_status,sleep_hou
 20-11-2026,1.60,Data Centric Programming,5,Home,Yes,11.22
 21-11-2026,0.67,Database,3,Home,Yes,7.72
 21-11-2026,1.57,Math,4,Home,Yes,7.72
+22-11-2026,1.32,Math,4,Home,Yes,8.47
+22-11-2026,0.88,Database,2,Home,Yes,8.47
