@@ -57,3 +57,35 @@ print(f"Total unique days: {len(daily_df)}")
 print(f"Total study sessions: {len(study_df)}")
 print(f"Total study days: {study_df['date'].nunique()}")
 print(f"Total non-study days: {(daily_df['study_hours'] == 0).sum()}")
+
+# Question 1: Which subject do I spend the most time studying?
+def study_hours_by_subject(data):
+    # Calculate total study hours for each subject
+    subject_hours = data.groupby("subject")["study_hours"].sum()
+
+    # Sort subjects from highest to lowest study hours
+    subject_hours = subject_hours.sort_values(ascending=False)
+
+    print("\nTotal study hours by subject:")
+    print(subject_hours.round(2))
+
+    return subject_hours
+
+# Create a bar chart showing total study hours by subject
+def plot_study_hours_by_subject(subject_hours):
+    plt.figure(figsize=(10, 6))
+
+    subject_hours.plot(kind="bar", color="steelblue")
+
+    plt.title("Total Study Hours by Subject")
+    plt.xlabel("Subject")
+    plt.ylabel("Total Study Hours")
+
+    plt.xticks(rotation=45, ha="right") #Rotates subject names to prevent overlapping
+    plt.tight_layout() #Prevents labels from being cut off
+
+    plt.savefig("charts/study_hours_by_subject.png", dpi=300)
+
+    plt.show()
+subject_hours = study_hours_by_subject(study_df)
+plot_study_hours_by_subject(subject_hours)
