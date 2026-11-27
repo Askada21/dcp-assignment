@@ -181,3 +181,45 @@ def plot_daily_study_hours(daily_hours):
     plt.show()
 daily_hours = daily_study_hours(daily_df)
 plot_daily_study_hours(daily_hours)
+
+# Question 4: How long do my study sessions usually last?
+def study_duration_distribution(data):
+    # Select study session durations
+    durations = data["study_hours"]
+
+    print("\nStudy session duration statistics:")
+
+    # Calculate descriptive statistics
+    print(durations.describe().round(2))
+
+    print(f"\nAverage session duration: {durations.mean():.2f} hours")
+    print(f"Median session duration: {durations.median():.2f} hours")
+    print(f"Shortest session: {durations.min():.2f} hours")
+    print(f"Longest session: {durations.max():.2f} hours")
+
+    return durations
+
+# Create a histogram showing study session duration distribution
+def plot_study_duration_distribution(durations):
+    plt.figure(figsize=(10, 6))
+
+    plt.hist(
+        durations,
+        bins=10,
+        color="mediumpurple",
+        edgecolor="black"
+    )
+
+    plt.title("Distribution of Study Session Durations")
+    plt.xlabel("Study Session Duration (Hours)")
+    plt.ylabel("Number of Study Sessions")
+
+    plt.grid(axis="y", alpha=0.3)
+    plt.tight_layout()
+
+    # Save the chart
+    plt.savefig("charts/study_duration_distribution.png", dpi=300)
+
+    plt.show()
+durations = study_duration_distribution(study_df)
+plot_study_duration_distribution(durations)
