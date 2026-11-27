@@ -5,6 +5,30 @@ import sqlite3
 connection = sqlite3.connect("study_tracker.db")
 cursor = connection.cursor()
 
+# Dataset Overview
+cursor.execute("""
+    select count(*) as total_records,
+    count(distinct date) as total_days
+    from study_tracker
+""")
+
+row = cursor.fetchone()
+
+print("Dataset Overview:")
+print(f"Total records: {row[0]}")
+print(f"Total days recorded: {row[1]}\n")
+
+# Count total study sessions
+cursor.execute("""
+    select count(*)
+    from study_tracker
+    where study_status = 'Yes'
+""")
+
+total_sessions = cursor.fetchone()[0]
+
+print(f"Total study sessions: {total_sessions}\n")
+
 # 1. Calculate total study hours for each subject
 # Exclude non-study days and sort from highest to lowest
 cursor.execute("""
@@ -133,5 +157,5 @@ for row in rows:
         print(f"Study days: {total_days}")
     else:
         print(f"Non-study days: {total_days}")
-        
+
 connection.close()
