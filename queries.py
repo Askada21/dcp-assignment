@@ -92,4 +92,24 @@ for row in rows:
     minutes = total_minutes % 60
 
     print(f"{date} | {subject} | {hours}h {minutes}m | Productivity: {productivity}/5")
+
+# Calculate average sleep hours without counting the same day multiple times
+cursor.execute("""
+    select round(avg(sleep_hours), 2) as avg_sleep
+    from (
+        select date, avg(sleep_hours) as sleep_hours
+        from study_tracker
+        where sleep_hours is not null
+        group by date
+    )
+""")
+
+avg_sleep = cursor.fetchone()[0]
+
+# Convert decimal hours into hours and minutes
+total_minutes = round(avg_sleep * 60)
+hours = total_minutes // 60
+minutes = total_minutes % 60
+
+print(f"\nAverage sleep per night: {hours}h {minutes}m")
 connection.close()
