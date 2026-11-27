@@ -129,3 +129,55 @@ def plot_productivity_by_location(location_productivity):
     plt.show()
 location_productivity = productivity_by_location(study_df)
 plot_productivity_by_location(location_productivity)
+
+# Question 3: How does my study time change over time?
+def daily_study_hours(data):
+    # Select date and total daily study hours
+    daily_hours = data[["date", "study_hours"]].copy()
+
+    # Sort records chronologically
+    daily_hours = daily_hours.sort_values("date")
+
+    print("\nDaily study hours:")
+    print(daily_hours)
+
+    # Calculate average daily study hours
+    average_hours = daily_hours["study_hours"].mean()
+
+    print(f"\nAverage daily study hours: {average_hours:.2f}")
+
+    # Find the day with the highest study hours
+    max_day = daily_hours.loc[daily_hours["study_hours"].idxmax()]
+
+    print(f"Most active study day: {max_day['date']:%d-%m-%Y}")
+    print(f"Study hours on that day: {max_day['study_hours']:.2f}")
+
+    return daily_hours
+
+# Create a line chart showing daily study hours over time
+def plot_daily_study_hours(daily_hours):
+    plt.figure(figsize=(12, 6))
+
+    plt.plot(
+        daily_hours["date"],
+        daily_hours["study_hours"],
+        color="steelblue",
+        marker="o",
+        linestyle="-"
+    )
+
+    plt.title("Daily Study Hours Over Time")
+    plt.xlabel("Date")
+    plt.ylabel("Study Hours")
+
+    plt.xticks(rotation=45, ha="right")
+    plt.ylim(bottom=0)
+    plt.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+
+    plt.savefig("charts/daily_study_hours.png", dpi=300)
+
+    plt.show()
+daily_hours = daily_study_hours(daily_df)
+plot_daily_study_hours(daily_hours)
