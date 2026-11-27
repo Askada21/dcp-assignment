@@ -1,5 +1,6 @@
 import csv 
 import sqlite3
+from datetime import datetime
 
 connection = sqlite3.connect('study_tracker.db')
 cursor = connection.cursor()
@@ -31,6 +32,18 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
         for column in row:
             if row[column] == "":  # looks for a key, whose name is stored in the 'column' variable
                 row[column] = None
+
+        # Date Validation
+        if row["date"] is None:
+            print("Missing date")
+            continue
+
+        try:
+            datetime.strptime(row["date"], "%d-%m-%Y") #strptime() - converts a string into a datetime object according to a specified format.
+
+        except ValueError:
+            print("Invalid date:", row["date"])
+            continue
 
         # Convert Values to Correct Data Types
         # as csv.DictReader() reads CSV values as strings
