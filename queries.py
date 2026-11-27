@@ -5,7 +5,7 @@ import sqlite3
 connection = sqlite3.connect("study_tracker.db")
 cursor = connection.cursor()
 
-# Calculate total study hours for each subject
+# 1. Calculate total study hours for each subject
 # Exclude non-study days and sort from highest to lowest
 cursor.execute("""
     select subject, sum(study_hours) as total_hours
@@ -30,7 +30,7 @@ for row in rows:
 
     print(f"{subject}: {hours}h {minutes}m")
 
-# Calculate average productivity for each study location
+# 2. Calculate average productivity for each study location
 cursor.execute("""
     select study_location, round(avg(productivity), 2) as avg_productivity
     from study_tracker
@@ -49,7 +49,7 @@ for row in rows:
 
     print(f"{location}: {avg_productivity}-5")
 
-# Count the number of study sessions for each subject
+# 3. Count the number of study sessions for each subject
 cursor.execute("""
     select subject, count(*) as total_sessions
     from study_tracker
@@ -68,7 +68,7 @@ for row in rows:
 
     print(f"{subject}: {total_sessions} sessions")
 
-# Find study sessions longer than two hours
+# 4. Find study sessions longer than two hours
 cursor.execute("""
     select date, subject, study_hours, productivity
     from study_tracker
@@ -93,7 +93,7 @@ for row in rows:
 
     print(f"{date} | {subject} | {hours}h {minutes}m | Productivity: {productivity}/5")
 
-# Calculate average sleep hours without counting the same day multiple times
+# 5. Calculate average sleep hours without counting the same day multiple times
 cursor.execute("""
     select round(avg(sleep_hours), 2) as avg_sleep
     from (
@@ -112,4 +112,26 @@ hours = total_minutes // 60
 minutes = total_minutes % 60
 
 print(f"\nAverage sleep per night: {hours}h {minutes}m")
+
+# 6. Count unique study and non-study days
+cursor.execute("""
+    select study_status, count(distinct date) as total_days
+    from study_tracker
+    group by study_status
+    order by total_days desc
+""")
+
+rows = cursor.fetchall()
+
+print("\nNumber of study and non-study days:")
+
+for row in rows:
+    status = row[0]
+    total_days = row[1]
+
+    if status == "Yes":
+        print(f"Study days: {total_days}")
+    else:
+        print(f"Non-study days: {total_days}")
+        
 connection.close()
