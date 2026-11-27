@@ -89,3 +89,43 @@ def plot_study_hours_by_subject(subject_hours):
     plt.show()
 subject_hours = study_hours_by_subject(study_df)
 plot_study_hours_by_subject(subject_hours)
+
+# Question 2: Where am I most productive when studying?
+def productivity_by_location(data):
+    # Calculate average productivity for each location
+    location_productivity = data.groupby("study_location")["productivity"].mean()
+
+    # Sort locations from highest to lowest productivity
+    location_productivity = location_productivity.sort_values(ascending=False)
+
+    print("\nAverage productivity by study location:")
+    print(location_productivity.round(2))
+
+    # Count study sessions for each location
+    print("\nNumber of study sessions by location:")
+    print(data["study_location"].value_counts())
+
+    return location_productivity
+
+# Create a bar chart showing average productivity by location
+def plot_productivity_by_location(location_productivity):
+    plt.figure(figsize=(8, 5))
+
+    location_productivity.plot(kind="bar", color="seagreen")
+
+    plt.title("Average Productivity by Study Location")
+    plt.xlabel("Study Location")
+    plt.ylabel("Average Productivity")
+
+    # Set the productivity scale from 0 to 5
+    plt.ylim(0, 5)
+
+    plt.xticks(rotation=0)
+    plt.tight_layout()
+
+    # Save the chart
+    plt.savefig("charts/productivity_by_location.png", dpi=300)
+
+    plt.show()
+location_productivity = productivity_by_location(study_df)
+plot_productivity_by_location(location_productivity)
