@@ -34,14 +34,23 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
 
         # Convert Values to Correct Data Types
         # as csv.DictReader() reads CSV values as strings
-        if row["study_hours"] is not None:
-            row["study_hours"] = float(row["study_hours"])
+        try:
+            if row["study_hours"] is not None:
+                row["study_hours"] = float(row["study_hours"])
 
-        if row["productivity(1-5)"] is not None:
-            row["productivity(1-5)"] = int(row["productivity(1-5)"])
+            if row["productivity(1-5)"] is not None:
+                row["productivity(1-5)"] = int(row["productivity(1-5)"])
 
-        if row["sleep_hours"] is not None:
-            row["sleep_hours"] = float(row["sleep_hours"])
+            if row["sleep_hours"] is not None:
+                row["sleep_hours"] = float(row["sleep_hours"])
+
+        except ValueError:
+            print("Invalid data type: ", row["date"])
+            continue
+        # Validate study status
+        if row["study_status"] not in ["Yes", "No"]:
+            print("Invalid study status:", row["date"])
+            continue
 
         # Data Validation
         if row["study_hours"] is None or not 0 <= row["study_hours"] <= 24:
@@ -55,7 +64,38 @@ with open('data/study_tracker.csv', 'r', encoding='utf-8-sig') as file:
         if row["sleep_hours"] is not None and not 0 <= row["sleep_hours"] <= 24:
             print("Invalid sleep hours: ", row["sleep_hours"], "on", row["date"])
             continue
-        
+
+        # Consistency Validation
+        # Check study hours when study_status is No
+        if row["study_status"] == "No" and row["study_hours"] != 0:
+            print("Inconsistent study hours:", row["date"])
+            continue
+
+        # Check study hours when study_status is Yes
+        if row["study_status"] == "Yes" and row["study_hours"] == 0:
+            print("Inconsistent study hours:", row["date"])
+            continue
+
+        # Check required values when the student studied
+        if row["study_status"] == "Yes":
+            if row["subject"] is None:
+                print("Missing subject:", row["date"])
+                continue
+
+            if row["study_location"] is None:
+                print("Missing study location:", row["date"])
+                continue
+
+            if row["productivity(1-5)"] is None:
+                print("Missing productivity:", row["date"])
+                continue
+
+        # Check unnecessary values when the student did not study
+        if row["study_status"] == "No":
+            if row["subject"] is not None or row["study_location"] is not None or row["productivity(1-5)"] is not None:
+                print("Inconsistent study record:", row["date"])
+                continue
+        # Insert Valid Data into SQLite
         cursor.execute(""" 
             insert into study_tracker (
                 date,
