@@ -30,4 +30,23 @@ for row in rows:
 
     print(f"{subject}: {hours}h {minutes}m")
 
+# Calculate average productivity for each study location
+cursor.execute("""
+    select study_location, round(avg(productivity), 2) as avg_productivity
+    from study_tracker
+    where study_status = 'Yes'
+    group by study_location
+    order by avg_productivity desc
+""")
+
+rows = cursor.fetchall()
+
+print("\nAverage productivity by study location:")
+
+for row in rows:
+    location = row[0]
+    avg_productivity = row[1]
+
+    print(f"{location}: {avg_productivity}-5")
+
 connection.close()
