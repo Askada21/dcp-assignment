@@ -68,4 +68,28 @@ for row in rows:
 
     print(f"{subject}: {total_sessions} sessions")
 
+# Find study sessions longer than two hours
+cursor.execute("""
+    select date, subject, study_hours, productivity
+    from study_tracker
+    where study_hours > 2 and study_status = 'Yes'
+    order by study_hours desc
+""")
+
+rows = cursor.fetchall()
+
+print("\nStudy sessions longer than two hours:")
+
+for row in rows:
+    date = row[0]
+    subject = row[1]
+    study_hours = row[2]
+    productivity = row[3]
+
+    # Convert decimal hours into hours and minutes
+    total_minutes = round(study_hours * 60)
+    hours = total_minutes // 60
+    minutes = total_minutes % 60
+
+    print(f"{date} | {subject} | {hours}h {minutes}m | Productivity: {productivity}/5")
 connection.close()
