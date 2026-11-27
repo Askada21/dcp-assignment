@@ -49,4 +49,23 @@ for row in rows:
 
     print(f"{location}: {avg_productivity}-5")
 
+# Count the number of study sessions for each subject
+cursor.execute("""
+    select subject, count(*) as total_sessions
+    from study_tracker
+    where study_status = 'Yes'
+    group by subject
+    order by total_sessions desc
+""")
+
+rows = cursor.fetchall()
+
+print("\nNumber of study sessions per subject:")
+
+for row in rows:
+    subject = row[0]
+    total_sessions = row[1]
+
+    print(f"{subject}: {total_sessions} sessions")
+
 connection.close()
